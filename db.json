@@ -1,0 +1,184 @@
+{
+	"hotels": [
+		{
+			"id": 1,
+			"hotel_name": "Alila Purnama Hotel",
+			"hotel_image": "https://www.welcome-hotels.com/site/assets/files/35059/welcome_hotel_marburg_lobby_2k.2560x1600.jpg",
+			"rating": 3,
+			"price": 2000000,
+			"bedroom_preview": [
+				{
+					"bed": "https://blog.bookingtogo.com/wp-content/uploads/2021/12/jenis-jenis-kamar-hotel.jpg"
+				},
+				{
+					"bed": "https://asset.kompas.com/crops/a_MAl0xqTsRt3DMPZlnFSX7aLFI=/0x1110:1920x2390/750x500/data/photo/2022/12/21/63a2921a54727.jpg"
+				},
+				{
+					"bed": "https://awsimages.detik.net.id/community/media/visual/2022/06/16/kamar-hotel_169.jpeg?w=780&q=90"
+				}
+			]
+		},
+		{
+			"id": 2,
+			"hotel_name": "Four Season Resort Sayan, Bali",
+			"hotel_image": "https://www.newzealand.com/assets/Operator-Database/img-1652959660-6127-25310-Alpine_Twin_IMG_1048__aWxvdmVrZWxseQo_CropResizeWzEyMDAsNjMwLDc1LCJqcGciXQ.JPG",
+			"rating": 5,
+			"price": 4700000,
+			"bedroom_preview": [
+				{
+					"bed": "https://blog.bookingtogo.com/wp-content/uploads/2021/12/jenis-jenis-kamar-hotel.jpg"
+				},
+				{
+					"bed": "https://asset.kompas.com/crops/a_MAl0xqTsRt3DMPZlnFSX7aLFI=/0x1110:1920x2390/750x500/data/photo/2022/12/21/63a2921a54727.jpg"
+				},
+				{
+					"bed": "https://www.konsultasi-akustik.com/wp-content/uploads/2021/02/interior-modern-comfortable-hotel-room-scaled.jpg"
+				}
+			]
+		},
+		{
+			"id": 3,
+			"hotel_name": "Mandapa A Ritz Carlton Reserve",
+			"hotel_image": "https://www.fodors.com/wp-content/uploads/2022/10/Aramness_120.jpeg",
+			"rating": 4.5,
+			"price": 3900000,
+			"bedroom_preview": [
+				{
+					"bed": "https://imgx.parapuan.co/crop/0x0:1122x838/x/photo/2022/02/01/istock-1050564510jpg-20220201082045.jpg"
+				},
+				{
+					"bed": "https://arsitagx-master-article.s3-ap-southeast-1.amazonaws.com/article-photo/275/Kamar-Hotel-Penuh-Gaya-Foto-1.jpg"
+				},
+				{
+					"bed": "https://cdn1-production-images-kly.akamaized.net/SpTdp1N9VbLXdjYjDE18BfE1fh0=/1200x900/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1770779/original/059314000_1510730819-Kamar-Hotel8.jpg"
+				}
+			]
+		},
+		{
+			"id": 4,
+			"hotel_name": "Amanjiwo Resort",
+			"hotel_image": "https://digital.ihg.com/is/image/ihg/even-hotels-eugene-5405616297-4x3",
+			"rating": 3.5,
+			"price": 2300000,
+			"bedroom_preview": [
+				{
+					"bed": "https://imgx.parapuan.co/crop/0x0:1122x838/x/photo/2022/02/01/istock-1050564510jpg-20220201082045.jpg"
+				},
+				{
+					"bed": "https://arsitagx-master-article.s3-ap-southeast-1.amazonaws.com/article-photo/275/Kamar-Hotel-Penuh-Gaya-Foto-1.jpg"
+				},
+				{
+					"bed": "https://cdn1-production-images-kly.akamaized.net/SpTdp1N9VbLXdjYjDE18BfE1fh0=/1200x900/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1770779/original/059314000_1510730819-Kamar-Hotel8.jpg"
+				}
+			]
+		},
+		{
+			"id": 5,
+			"hotel_name": "DoubleTree by Hilton Jakarta",
+			"hotel_image": "https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,h_1200,q_75,w_1200/v1/clients/orlandofl/5900_pool_b92df465-0c67-4161-b8bb-67f9fc301094.jpg",
+			"rating": 1.5,
+			"price": 1175000,
+			"bedroom_preview": [
+				{
+					"bed": "https://imgx.parapuan.co/crop/0x0:1122x838/x/photo/2022/02/01/istock-1050564510jpg-20220201082045.jpg"
+				},
+				{
+					"bed": "https://arsitagx-master-article.s3-ap-southeast-1.amazonaws.com/article-photo/275/Kamar-Hotel-Penuh-Gaya-Foto-1.jpg"
+				},
+				{
+					"bed": "https://cdn1-production-images-kly.akamaized.net/SpTdp1N9VbLXdjYjDE18BfE1fh0=/1200x900/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1770779/original/059314000_1510730819-Kamar-Hotel8.jpg"
+				}
+			]
+		},
+		{
+			"id": 6,
+			"hotel_name": "The Oberoi Lombok",
+			"hotel_image": "https://images.trvl-media.com/lodging/72000000/71420000/71414700/71414629/8b73c3ff_w.jpg",
+			"rating": 4.5,
+			"price": 4650000,
+			"bedroom_preview": [
+				{
+					"bed": "https://imgx.parapuan.co/crop/0x0:1122x838/x/photo/2022/02/01/istock-1050564510jpg-20220201082045.jpg"
+				},
+				{
+					"bed": "https://arsitagx-master-article.s3-ap-southeast-1.amazonaws.com/article-photo/275/Kamar-Hotel-Penuh-Gaya-Foto-1.jpg"
+				},
+				{
+					"bed": "https://cdn1-production-images-kly.akamaized.net/SpTdp1N9VbLXdjYjDE18BfE1fh0=/1200x900/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1770779/original/059314000_1510730819-Kamar-Hotel8.jpg"
+				}
+			]
+		},
+		{
+			"id": 7,
+			"hotel_name": "Intercontinental Bali Resort",
+			"hotel_image": "https://hotelenglishpoint.com/blog/wp-content/uploads/2021/02/epm-scaled.jpg",
+			"rating": 4.5,
+			"price": 3250000,
+			"bedroom_preview": [
+				{
+					"bed": "https://imgx.parapuan.co/crop/0x0:1122x838/x/photo/2022/02/01/istock-1050564510jpg-20220201082045.jpg"
+				},
+				{
+					"bed": "https://arsitagx-master-article.s3-ap-southeast-1.amazonaws.com/article-photo/275/Kamar-Hotel-Penuh-Gaya-Foto-1.jpg"
+				},
+				{
+					"bed": "https://cdn1-production-images-kly.akamaized.net/SpTdp1N9VbLXdjYjDE18BfE1fh0=/1200x900/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1770779/original/059314000_1510730819-Kamar-Hotel8.jpg"
+				}
+			]
+		},
+		{
+			"id": 8,
+			"hotel_name": "Four Seasons Resort Bali at Jimbaran Bay",
+			"hotel_image": "https://media.gq-magazine.co.uk/photos/5dd3d382cb3870000836ede7/16:9/pass/20191119-hotel-01.jpg",
+			"rating": 4,
+			"price": 3800000,
+			"bedroom_preview": [
+				{
+					"bed": "https://imgx.parapuan.co/crop/0x0:1122x838/x/photo/2022/02/01/istock-1050564510jpg-20220201082045.jpg"
+				},
+				{
+					"bed": "https://arsitagx-master-article.s3-ap-southeast-1.amazonaws.com/article-photo/275/Kamar-Hotel-Penuh-Gaya-Foto-1.jpg"
+				},
+				{
+					"bed": "https://cdn1-production-images-kly.akamaized.net/SpTdp1N9VbLXdjYjDE18BfE1fh0=/1200x900/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1770779/original/059314000_1510730819-Kamar-Hotel8.jpg"
+				}
+			]
+		},
+		{
+			"id": 9,
+			"hotel_name": "Nihi Sumba",
+			"hotel_image": "https://luxurylondon.co.uk/wp-content/uploads/2022/08/best-new-hotels-opening-in-2022-xl-hd-1465x1099-c-center.jpg",
+			"rating": 2.5,
+			"price": 1900000,
+			"bedroom_preview": [
+				{
+					"bed": "https://imgx.parapuan.co/crop/0x0:1122x838/x/photo/2022/02/01/istock-1050564510jpg-20220201082045.jpg"
+				},
+				{
+					"bed": "https://arsitagx-master-article.s3-ap-southeast-1.amazonaws.com/article-photo/275/Kamar-Hotel-Penuh-Gaya-Foto-1.jpg"
+				},
+				{
+					"bed": "https://cdn1-production-images-kly.akamaized.net/SpTdp1N9VbLXdjYjDE18BfE1fh0=/1200x900/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1770779/original/059314000_1510730819-Kamar-Hotel8.jpg"
+				}
+			]
+		},
+		{
+			"id": 10,
+			"hotel_name": "Banyan Tree Ungasan, Bali",
+			"hotel_image": "https://media.cnn.com/api/v1/images/stellar/prod/221121163659-christmas-hotels-ritz-paris-exterior.jpg?c=original&q=w_1280,c_fill",
+			"rating": 3,
+			"price": 2700000,
+			"bedroom_preview": [
+				{
+					"bed": "https://imgx.parapuan.co/crop/0x0:1122x838/x/photo/2022/02/01/istock-1050564510jpg-20220201082045.jpg"
+				},
+				{
+					"bed": "https://arsitagx-master-article.s3-ap-southeast-1.amazonaws.com/article-photo/275/Kamar-Hotel-Penuh-Gaya-Foto-1.jpg"
+				},
+				{
+					"bed": "https://cdn1-production-images-kly.akamaized.net/SpTdp1N9VbLXdjYjDE18BfE1fh0=/1200x900/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1770779/original/059314000_1510730819-Kamar-Hotel8.jpg"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,22 @@
+.sidebar-wrapper {
+	height: 100%;
+	gap: 30px;
+	display: flex;
+	justify-content: flex-start;
+	padding: 30px 10px;
+	align-items: flex-start;
+	flex-direction: column;
+	background-color: rgb(236, 236, 236);
+	border-right: 1px solid gray;
+}
+
+.form-group {
+	width: 100%;
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.main-price {
+	margin-top: 40px;
+}
