@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./sidebar.css";
 import { InputGroup, Form } from "react-bootstrap";
-import { AiFillStar } from "react-icons/ai";
 
 type PropsTypes = {
 	handleMode: () => void;
