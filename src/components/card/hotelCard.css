@@ -1,0 +1,33 @@
+.card {
+	width: 17rem;
+	height: 23rem !important;
+	box-shadow: 0 3px 5px -2px black;
+}
+
+.card-title {
+	height: 4rem;
+}
+
+.card-img {
+	height: 8rem !important;
+}
+.card-body {
+	padding: 20px 10px;
+}
+
+a#booking-link {
+	text-decoration: none;
+	color: black;
+	border-radius: 20px;
+	display: block;
+	padding: 5px;
+	font-size: large;
+	background-color: rgb(216, 213, 213);
+	text-align: center;
+	transition: all 0.5s;
+	font-weight: bold;
+}
+
+a#booking-link:hover {
+	background-color: rgb(184, 182, 182);
+}

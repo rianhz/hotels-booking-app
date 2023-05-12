@@ -1,63 +1,38 @@
-import react, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
-import { useQuery } from "@tanstack/react-query";
-import { fetchHotels } from "./api/hotels";
-import { HotelType } from "./types/hotel";
+
 import { Container, Row, Col } from "react-bootstrap";
 import SideBar from "./components/sidebar/SideBar";
+import { useAppDispatch, useAppSelector } from "./app/hooks";
+// import { bookHotel } from "./features/hotelSlice";
+
+import { Routes, Route } from "react-router-dom";
+import Booking from "./pages/Booking";
+import List from "./pages/List";
 
 function App() {
 	const [mode, setMode] = useState<boolean>(false);
-
-	const { data, isLoading, isError, error } = useQuery({
-		queryKey: ["hotels"],
-		queryFn: fetchHotels,
-	});
-
-	if (isLoading)
-		return (
-			<div
-				style={{
-					width: "100vw",
-					height: "100vh",
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-				}}
-			>
-				<h1>Loading....</h1>
-			</div>
-		);
-	if (isError) return <h1>{(error as any).message}</h1>;
 
 	const handleMode = () => {
 		setMode(!mode);
 	};
 
 	return (
-		<Container fluid className="p-0 m-0">
+		<Container
+			fluid
+			className={`p-0 m-0 ${
+				mode ? "bg-dark text-light" : "bg-light text-dark"
+			}`}
+		>
 			<Row>
 				<Col lg={3}>
-					<SideBar handleMode={handleMode} />
+					<SideBar handleMode={handleMode} mode={mode} />
 				</Col>
 				<Col lg={9}>
-					<div
-						style={{
-							height: "100vh",
-						}}
-					>
-						<h1>haii</h1>
-					</div>
-					<div
-						style={{
-							height: "100vh",
-						}}
-					>
-						<h1>haii</h1>
-					</div>
-					{/* {data?.map((el: HotelType, i: number) => {
-						return <p key={i}> {el.hotel_name}</p>;
-					})} */}
+					<Routes>
+						<Route path="/" element={<List />} />
+						<Route path="/booking/:hotel_name" element={<Booking />} />
+					</Routes>
 				</Col>
 			</Row>
 		</Container>

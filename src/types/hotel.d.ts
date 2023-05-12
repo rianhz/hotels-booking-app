@@ -2,7 +2,7 @@ interface IBedroom {
 	bed: string;
 }
 
-export type HotelType = {
+export type HotelTypes = {
 	bedroom_preview: IBedroom[];
 	hotel_image: string;
 	hotel_name: string;
