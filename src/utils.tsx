@@ -1,4 +1,10 @@
+import React from "react";
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
+
+type PropsSideStars = {
+	stars: number;
+	someFunc: (e: number) => void;
+};
 
 export const generateStars = (rating: number) => {
 	return (
@@ -48,6 +54,31 @@ export const generateStars = (rating: number) => {
 					<BsStar />
 				)}
 			</span>
+		</>
+	);
+};
+
+export const GenerateStarsSideBar: React.FC<PropsSideStars> = ({
+	stars,
+	someFunc,
+}) => {
+	return (
+		<>
+			{[...Array(5)].map((el, i) => {
+				i += 1;
+				return (
+					<button
+						key={i}
+						type="button"
+						className={i <= stars ? "ratingSideOn" : "ratingSideOff"}
+						onClick={() => someFunc(i)}
+					>
+						<span>
+							<BsStarFill />
+						</span>
+					</button>
+				);
+			})}
 		</>
 	);
 };

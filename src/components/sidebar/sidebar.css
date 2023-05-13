@@ -1,5 +1,9 @@
 .sidebar-wrapper {
-	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 280px;
+	height: 100vh;
 	gap: 30px;
 	display: flex;
 	justify-content: flex-start;
@@ -33,6 +37,7 @@
 	cursor: pointer;
 	padding: 3px;
 }
+
 .main-rating {
 	margin-top: 20px;
 }

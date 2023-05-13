@@ -1,0 +1,12 @@
+button {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+.ratingSideOn {
+	color: orange;
+}
+.ratingSideOff {
+	color: rgb(246, 209, 139);
+}

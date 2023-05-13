@@ -1,19 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 import "./sidebar.css";
-import { InputGroup, Form } from "react-bootstrap";
-import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
+import { InputGroup, Form, Button } from "react-bootstrap";
+import { useAppSelector } from "../../app/hooks";
+import StarsSideBar from "../starsSideBar/StarsSideBar";
 
 type PropsTypes = {
-	mode: boolean;
 	handleMode: () => void;
+	handleRadios: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	handleStars: (e: number) => void;
+	stars: number;
+	hover: number;
+	setHover: React.Dispatch<React.SetStateAction<number>>;
+	handleReset: () => void;
+	radios: string;
 };
 
-const SideBar: React.FC<PropsTypes> = ({ handleMode, mode }) => {
-	const handleRadios = (e: React.ChangeEvent<HTMLInputElement>) => {
-		console.log(e.target.value);
-	};
-
-	const rating = 4.5;
+const SideBar: React.FC<PropsTypes> = ({
+	handleMode,
+	handleRadios,
+	handleStars,
+	stars,
+	setHover,
+	hover,
+	handleReset,
+	radios,
+}) => {
+	const mode = useAppSelector((state) => state.booked.mode);
 
 	return (
 		<div
@@ -24,7 +36,7 @@ const SideBar: React.FC<PropsTypes> = ({ handleMode, mode }) => {
 			<Form.Check
 				type="switch"
 				id="custom-switch"
-				label={mode ? "Dark Mode" : "Light Mode"}
+				label={mode ? "Turn Light " : "Turn Dark"}
 				onChange={handleMode}
 			/>
 			<InputGroup>
@@ -35,13 +47,15 @@ const SideBar: React.FC<PropsTypes> = ({ handleMode, mode }) => {
 				<h2>Filter by : </h2>
 				<div className="main-price">
 					<h5>Price</h5>
-					<Form.Group onChange={handleRadios} className="form-group">
+					<Form.Group className="form-group">
 						<Form.Check
 							type="radio"
-							label="<= 1.000.000"
+							label="<= 2.000.000"
 							id="checkOne"
 							name="group"
 							value="low"
+							checked={radios === "low" ? true : false}
+							onChange={handleRadios}
 						/>
 						<Form.Check
 							type="radio"
@@ -49,6 +63,8 @@ const SideBar: React.FC<PropsTypes> = ({ handleMode, mode }) => {
 							id="checkTwo"
 							name="group"
 							value="medium"
+							onChange={handleRadios}
+							checked={radios === "medium" ? true : false}
 						/>
 						<Form.Check
 							type="radio"
@@ -56,56 +72,22 @@ const SideBar: React.FC<PropsTypes> = ({ handleMode, mode }) => {
 							id="checkThree"
 							name="group"
 							value="high"
+							onChange={handleRadios}
+							checked={radios === "high" ? true : false}
 						/>
 					</Form.Group>
 				</div>
 				<div className="main-rating">
 					<h5>Rating</h5>
-					<span className="stars-span">
-						{rating >= 1 ? (
-							<BsStarFill />
-						) : rating >= 0.5 ? (
-							<BsStarHalf />
-						) : (
-							<BsStar />
-						)}
-					</span>
-					<span className="stars-span">
-						{rating >= 2 ? (
-							<BsStarFill />
-						) : rating >= 1.5 ? (
-							<BsStarHalf />
-						) : (
-							<BsStar />
-						)}
-					</span>
-					<span className="stars-span">
-						{rating >= 3 ? (
-							<BsStarFill />
-						) : rating >= 2.5 ? (
-							<BsStarHalf />
-						) : (
-							<BsStar />
-						)}
-					</span>
-					<span className="stars-span">
-						{rating >= 4 ? (
-							<BsStarFill />
-						) : rating >= 3.5 ? (
-							<BsStarHalf />
-						) : (
-							<BsStar />
-						)}
-					</span>
-					<span className="stars-span">
-						{rating >= 5 ? (
-							<BsStarFill />
-						) : rating >= 4.5 ? (
-							<BsStarHalf />
-						) : (
-							<BsStar />
-						)}
-					</span>
+					<StarsSideBar
+						stars={stars}
+						handleStars={handleStars}
+						hover={hover}
+						setHover={setHover}
+					/>
+					<Button className="d-block mt-5 w-100" onClick={() => handleReset()}>
+						Reset
+					</Button>
 				</div>
 			</div>
 		</div>

@@ -1,49 +1,43 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import { useQuery } from "@tanstack/react-query";
-import { fetchHotels } from "../api/hotels";
 import { HotelTypes } from "../types/hotel";
 import HotelCard from "../components/card/HotelCard";
+import HotelHeader from "../components/header/HotelHeader";
 
-const List = () => {
-	const { data, isLoading, isError, error, isSuccess } = useQuery({
-		queryKey: ["hotels"],
-		queryFn: fetchHotels,
-	});
+type PropsTypes = {
+	data: HotelTypes[] | undefined;
+};
 
-	console.log({ hotels: data, success: isSuccess, isError: isError });
-
-	if (isLoading)
-		return (
-			<div
-				style={{
-					width: "100%",
-					height: "100%",
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-				}}
-			>
-				<h1>Loading....</h1>
-			</div>
-		);
-	if (isError) return <h1>{(error as any).message}</h1>;
+const List: React.FC<PropsTypes> = ({ data }) => {
 	return (
-		<Row>
-			{data?.map((el: HotelTypes, i: number) => {
-				return (
-					<Col
-						key={i}
-						lg={3}
-						md={6}
-						sm={12}
-						className="d-flex justify-content-center align-items-center m-3"
-					>
-						<HotelCard hotels={el} />
+		<>
+			<Row>
+				<Col>
+					<HotelHeader />
+				</Col>
+			</Row>
+			<Row className="d-flex justify-content-center align-items-start min-vh-100 mt-5">
+				{data && data.length < 1 ? (
+					<Col className="d-flex justify-content-center align-items-start m-3">
+						<h4 className="">Hotels not available</h4>
 					</Col>
-				);
-			})}
-		</Row>
+				) : (
+					data?.map((el: HotelTypes, i: number) => {
+						return (
+							<Col
+								key={i}
+								lg={3}
+								md={6}
+								sm={12}
+								className="d-flex justify-content-center align-items-center m-3"
+							>
+								<HotelCard hotels={el} />
+							</Col>
+						);
+					})
+				)}
+			</Row>
+		</>
 	);
 };
 
