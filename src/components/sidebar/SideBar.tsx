@@ -85,7 +85,7 @@ const SideBar: React.FC<PropsTypes> = ({
 						hover={hover}
 						setHover={setHover}
 					/>
-					<Button className="d-block mt-5 w-100" onClick={() => handleReset()}>
+					<Button className="mx-auto mt-5 w-100" onClick={() => handleReset()}>
 						Reset
 					</Button>
 				</div>

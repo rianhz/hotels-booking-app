@@ -3,12 +3,22 @@ import { HotelTypes } from "../types/hotel";
 
 type InitialTypes = {
 	mode: boolean;
-	booked: HotelTypes[];
+	booked: HotelTypes;
 };
 
 const initialState: InitialTypes = {
 	mode: false,
-	booked: [],
+	booked: {
+		bedroom_preview: [],
+		hotel_image: "",
+		hotel_name: "",
+		id: 0,
+		price: 0,
+		rating: 0,
+		desc: "",
+		times: 0,
+		total: 0,
+	},
 };
 
 const hotelSlice = createSlice({
@@ -16,7 +26,22 @@ const hotelSlice = createSlice({
 	initialState,
 	reducers: {
 		bookHotel: (state, action) => {
-			state.booked.push(action.payload);
+			const total = { ...action.payload, total: action.payload.price };
+			const times = { times: 1 };
+			const temporaryData = { ...total, ...times };
+
+			state.booked = { ...state.booked, ...temporaryData };
+		},
+		increaseTime: (state) => {
+			state.booked.times = state.booked.times += 1;
+			state.booked.total = state.booked.price * state.booked.times;
+		},
+		decreaseTime: (state) => {
+			state.booked.times =
+				state.booked.times === 1
+					? state.booked.times
+					: (state.booked.times -= 1);
+			state.booked.total = state.booked.price * state.booked.times;
 		},
 		switchMode: (state) => {
 			state.mode = !state.mode;
@@ -24,6 +49,7 @@ const hotelSlice = createSlice({
 	},
 });
 
-export const { bookHotel, switchMode } = hotelSlice.actions;
+export const { bookHotel, switchMode, increaseTime, decreaseTime } =
+	hotelSlice.actions;
 
 export default hotelSlice.reducer;

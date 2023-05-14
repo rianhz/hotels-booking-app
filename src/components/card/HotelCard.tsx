@@ -29,7 +29,7 @@ const HotelCard: React.FC<PropsTypes> = ({ hotels }) => {
 			</Card.Body>
 			<Card.Footer>
 				<Link to={`/booking/${hotels.hotel_name}`} id="booking-link">
-					BOOK
+					Details
 				</Link>
 			</Card.Footer>
 		</Card>

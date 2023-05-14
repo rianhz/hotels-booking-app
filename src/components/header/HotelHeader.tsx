@@ -2,10 +2,8 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import bg from "../../images/bg-hotel.webp";
 import "./hotelHeader.css";
-import { useAppSelector } from "../../app/hooks";
 
 const HotelHeader: React.FC = () => {
-	const mode = useAppSelector((state) => state.booked.mode);
 	return (
 		<Row>
 			<Col

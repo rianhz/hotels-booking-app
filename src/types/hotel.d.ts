@@ -9,4 +9,7 @@ export type HotelTypes = {
 	id: number;
 	price: number;
 	rating: number;
+	desc: string;
+	times: number;
+	total: number;
 };
