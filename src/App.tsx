@@ -93,8 +93,8 @@ function App() {
 						<Route path="/payment/:hotel_name" element={<Payment />} />
 					</Routes>
 				</Col>
+				<FooterComp />
 			</Row>
-			<FooterComp />
 		</Container>
 	);
 }

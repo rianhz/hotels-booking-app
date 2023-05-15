@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { HotelTypes } from "../types/hotel";
 import HotelCard from "../components/card/HotelCard";
@@ -55,12 +55,14 @@ const List: React.FC<PropsTypes> = ({
 						className="d-flex justify-content-center align-items-start min-vh-100 mt-lg-5 mt-md-1"
 						ref={listRef}
 					>
-						{data && data.length < 1 ? (
+						{data && data.length < 1 && (
 							<Col className="d-flex justify-content-center align-items-start m-3">
 								<h4 className="">Hotels not available</h4>
 							</Col>
-						) : (
-							data?.map((el: HotelTypes, i: number) => {
+						)}
+
+						{data &&
+							data.map((el: HotelTypes, i: number) => {
 								return (
 									<Col
 										key={i}
@@ -72,8 +74,7 @@ const List: React.FC<PropsTypes> = ({
 										<HotelCard hotels={el} />
 									</Col>
 								);
-							})
-						)}
+							})}
 					</Row>
 				</Col>
 			</Row>
