@@ -16,3 +16,7 @@
 	left: 30px;
 	color: white;
 }
+
+.booking-text p {
+	max-width: 700px;
+}

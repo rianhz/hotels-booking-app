@@ -3,6 +3,8 @@ import "./sidebar.css";
 import { InputGroup, Form, Button } from "react-bootstrap";
 import { useAppSelector } from "../../app/hooks";
 import StarsSideBar from "../starsSideBar/StarsSideBar";
+import { ReactComponent as ReactLogo } from "../../images/logoipsum-243.svg";
+import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 
 type PropsTypes = {
 	handleMode: () => void;
@@ -33,12 +35,15 @@ const SideBar: React.FC<PropsTypes> = ({
 				mode ? "bg-dark text-light" : "bg-light text-dark"
 			} sidebar-wrapper`}
 		>
-			<Form.Check
-				type="switch"
-				id="custom-switch"
-				label={mode ? "Turn Light " : "Turn Dark"}
-				onChange={handleMode}
-			/>
+			<div className="d-flex justify-content-start align-items-center w-100">
+				<Form.Check
+					type="switch"
+					id="custom-switch"
+					label={mode ? <BsFillMoonStarsFill /> : <BsFillSunFill />}
+					onChange={handleMode}
+				/>
+				<ReactLogo />
+			</div>
 			<InputGroup>
 				<Form.Control placeholder="Search Hotel" />
 			</InputGroup>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Row, Col } from "react-bootstrap";
 import { HotelTypes } from "../types/hotel";
 import HotelCard from "../components/card/HotelCard";
@@ -15,6 +15,7 @@ type PropsTypes = {
 	setHover: React.Dispatch<React.SetStateAction<number>>;
 	handleReset: () => void;
 	radios: string;
+	listRef: React.MutableRefObject<undefined>;
 };
 
 const List: React.FC<PropsTypes> = ({
@@ -27,6 +28,7 @@ const List: React.FC<PropsTypes> = ({
 	hover,
 	handleReset,
 	radios,
+	listRef,
 }) => {
 	return (
 		<>
@@ -35,7 +37,6 @@ const List: React.FC<PropsTypes> = ({
 					<HotelHeader />
 				</Col>
 			</Row>
-
 			<Row>
 				<Col lg={3} className="p-0 m-0">
 					<SideBar
@@ -50,7 +51,10 @@ const List: React.FC<PropsTypes> = ({
 					/>
 				</Col>
 				<Col lg={9}>
-					<Row className="d-flex justify-content-center align-items-start min-vh-100 mt-5">
+					<Row
+						className="d-flex justify-content-center align-items-start min-vh-100 mt-lg-5 mt-md-1"
+						ref={listRef}
+					>
 						{data && data.length < 1 ? (
 							<Col className="d-flex justify-content-center align-items-start m-3">
 								<h4 className="">Hotels not available</h4>

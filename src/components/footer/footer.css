@@ -1,0 +1,20 @@
+.footer-container {
+	background: rgb(230, 228, 228);
+}
+
+a.a-link {
+	text-decoration: none;
+	color: black;
+	padding: 5px;
+	border-radius: 10px;
+	transition: all 0.7s;
+}
+
+a.a-link:hover {
+	box-shadow: 0 3px 5px -2px black;
+	color: black;
+}
+
+.foot {
+	background-color: rgb(224, 222, 222);
+}

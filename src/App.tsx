@@ -1,3 +1,4 @@
+import React, { useRef } from "react";
 import "./App.css";
 import { Container, Row, Col, Spinner } from "react-bootstrap";
 import { filteringData, useAppDispatch, useAppSelector } from "./app/hooks";
@@ -9,6 +10,7 @@ import { switchMode } from "./features/hotelSlice";
 import { fetchHotels } from "./api/hotels";
 import { useState } from "react";
 import Payment from "./pages/Payment";
+import FooterComp from "./components/footer/FooterComp";
 
 function App() {
 	const [radios, setRadios] = useState<string>("");
@@ -17,14 +19,13 @@ function App() {
 
 	const dispatch = useAppDispatch();
 	const mode = useAppSelector((state) => state.booked.mode);
-	const hot = useAppSelector((state) => state.booked);
-	console.log(hot);
+	const listRef = useRef();
 
 	const { data, isLoading, isError, error } = useQuery(
 		["hotels"],
 		fetchHotels,
 		{
-			select: (data) => filteringData(radios, stars, data),
+			select: (data) => filteringData(radios, stars, data, listRef),
 		}
 	);
 
@@ -66,9 +67,7 @@ function App() {
 	return (
 		<Container
 			fluid
-			className={`px-3 m-0 ${
-				mode ? "bg-dark text-light" : "bg-light text-dark"
-			}`}
+			className={` ${mode ? "bg-dark text-light" : "bg-light text-dark"}`}
 		>
 			<Row>
 				<Col>
@@ -86,6 +85,7 @@ function App() {
 									setHover={setHover}
 									handleReset={handleReset}
 									radios={radios}
+									listRef={listRef}
 								/>
 							}
 						/>
@@ -94,6 +94,7 @@ function App() {
 					</Routes>
 				</Col>
 			</Row>
+			<FooterComp />
 		</Container>
 	);
 }
