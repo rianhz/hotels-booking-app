@@ -1,7 +1,12 @@
 import React, { useRef } from "react";
 import "./App.css";
 import { Container, Row, Col, Spinner } from "react-bootstrap";
-import { filteringData, useAppDispatch, useAppSelector } from "./app/hooks";
+import {
+	filteringData,
+	searchingHotel,
+	useAppDispatch,
+	useAppSelector,
+} from "./app/hooks";
 import { useQuery } from "@tanstack/react-query";
 import { Routes, Route } from "react-router-dom";
 import Booking from "./pages/Booking";
@@ -14,6 +19,8 @@ import FooterComp from "./components/footer/FooterComp";
 
 function App() {
 	const [radios, setRadios] = useState<string>("");
+	const [searchValue, setSearchValue] = useState<string>("");
+
 	const [stars, setStars] = useState<number>(0);
 	const [hover, setHover] = useState(0);
 
@@ -25,7 +32,10 @@ function App() {
 		["hotels"],
 		fetchHotels,
 		{
-			select: (data) => filteringData(radios, stars, data, listRef),
+			select:
+				searchValue.length > 3
+					? (data) => searchingHotel(searchValue, data)
+					: (data) => filteringData(radios, stars, data, listRef),
 		}
 	);
 
@@ -62,7 +72,10 @@ function App() {
 		setRadios("");
 		setHover(0);
 		setStars(0);
+		setSearchValue("");
 	};
+
+	console.log(searchValue);
 
 	return (
 		<Container
@@ -76,6 +89,8 @@ function App() {
 							path="/"
 							element={
 								<List
+									searchValue={searchValue}
+									setSearchValue={setSearchValue}
 									data={data}
 									handleMode={handleMode}
 									handleRadios={handleRadios}

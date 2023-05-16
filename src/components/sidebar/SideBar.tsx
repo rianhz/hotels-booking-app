@@ -15,6 +15,8 @@ type PropsTypes = {
 	setHover: React.Dispatch<React.SetStateAction<number>>;
 	handleReset: () => void;
 	radios: string;
+	setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+	searchValue: string;
 };
 
 const SideBar: React.FC<PropsTypes> = ({
@@ -26,6 +28,8 @@ const SideBar: React.FC<PropsTypes> = ({
 	hover,
 	handleReset,
 	radios,
+	setSearchValue,
+	searchValue,
 }) => {
 	const mode = useAppSelector((state) => state.booked.mode);
 
@@ -45,7 +49,11 @@ const SideBar: React.FC<PropsTypes> = ({
 				<ReactLogo />
 			</div>
 			<InputGroup>
-				<Form.Control placeholder="Search Hotel" />
+				<Form.Control
+					placeholder="Type >3 Characters"
+					value={searchValue}
+					onChange={(e) => setSearchValue(e.target.value)}
+				/>
 			</InputGroup>
 
 			<div className="filtering">

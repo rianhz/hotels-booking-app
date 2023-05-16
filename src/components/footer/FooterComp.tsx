@@ -90,10 +90,8 @@ const FooterComp = () => {
 
 	return (
 		<Row
-			// className={`footer-container ${
-			// 	mode ? "bg-dark text-light" : "bg-light text-dark"
-			// }`}
 			style={{
+				marginTop: "50px",
 				backgroundColor: mode ? "#212529" : "rgb(230, 228, 228)",
 				color: mode ? "white" : "black",
 			}}

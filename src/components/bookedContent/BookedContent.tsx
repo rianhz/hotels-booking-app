@@ -46,75 +46,69 @@ const BookedContent: React.FC = () => {
 	};
 
 	return (
-		<>
-			<Row className="pt-3 vh-100">
-				<Col lg={9} md={12} sm={12}>
-					<Row>
-						<Col className="d-flex justify-content-center align-items-center images-containter">
-							<div className="booked-images-wrapper">
-								{data[0].bedroom_preview.map((bed, bedIndex) => {
-									return bedIndex === renderIndex ? (
-										<img
-											src={bed.bed}
-											alt="bed"
-											key={bedIndex}
-											className="images-booked active"
-										/>
-									) : (
-										<img
-											src={bed.bed}
-											alt="bed"
-											key={bedIndex}
-											className="images-booked"
-										/>
-									);
-								})}
-							</div>
-						</Col>
-					</Row>
-					<Row>
-						<Col className="d-flex justify-content-between mt-2">
+		<Row className="pt-3">
+			<Col lg={8} md={12} sm={12}>
+				<Row>
+					<Col className="d-flex justify-content-center align-items-center images-containter">
+						<div className="booked-images-wrapper">
 							{data[0].bedroom_preview.map((bed, bedIndex) => {
-								return (
-									<button
-										className="button-images"
+								return bedIndex === renderIndex ? (
+									<img
+										src={bed.bed}
+										alt="bed"
 										key={bedIndex}
-										onClick={() => handleIndex(bedIndex)}
-									>
-										<img
-											src={bed.bed}
-											alt="bed"
-											className="images-button-item"
-										/>
-									</button>
+										className="images-booked active"
+									/>
+								) : (
+									<img
+										src={bed.bed}
+										alt="bed"
+										key={bedIndex}
+										className="images-booked"
+									/>
 								);
 							})}
-						</Col>
-					</Row>
-				</Col>
-				<Col lg={3} md={12} sm={12} className="payments">
-					{data.map((el, i) => {
-						return (
-							<div key={i}>
-								<h4>{el.hotel_name}</h4>
-								<p>{generateStars(el.rating)}</p>
-								<p>{setCurrency(el.price)} / day</p>
-								<h5>Description</h5>
-								<p>{el.desc}</p>
-								<Link
-									to={`/payment/${el.hotel_name}`}
-									onClick={() => dispatch(bookHotel(el))}
+						</div>
+					</Col>
+				</Row>
+				<Row>
+					<Col className="d-flex justify-content-between mt-2">
+						{data[0].bedroom_preview.map((bed, bedIndex) => {
+							return (
+								<button
+									className="button-images"
+									key={bedIndex}
+									onClick={() => handleIndex(bedIndex)}
 								>
-									<Button>
-										Go to Payment <AiOutlineArrowRight />
-									</Button>
-								</Link>
-							</div>
-						);
-					})}
-				</Col>
-			</Row>
-		</>
+									<img src={bed.bed} alt="bed" className="images-button-item" />
+								</button>
+							);
+						})}
+					</Col>
+				</Row>
+			</Col>
+			<Col lg={4} md={12} sm={12} className="payments">
+				{data.map((el, i) => {
+					return (
+						<div key={i}>
+							<h4>{el.hotel_name}</h4>
+							<p>{generateStars(el.rating)}</p>
+							<p>{setCurrency(el.price)} / day</p>
+							<h5>Description</h5>
+							<p>{el.desc}</p>
+							<Link
+								to={`/payment/${el.hotel_name}`}
+								onClick={() => dispatch(bookHotel(el))}
+							>
+								<Button>
+									Go to Payment <AiOutlineArrowRight />
+								</Button>
+							</Link>
+						</div>
+					);
+				})}
+			</Col>
+		</Row>
 	);
 };
 

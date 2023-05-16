@@ -10,6 +10,13 @@ export const getDataById = (e: string | undefined, data: HotelTypes[]) => {
 	return hotel;
 };
 
+export const searchingHotel = (e: string, data: HotelTypes[]) => {
+	const hotel = data.filter((el) =>
+		el.hotel_name.toLowerCase().includes(e.toLowerCase())
+	);
+	return hotel;
+};
+
 export const filteringData = (
 	value: string,
 	stars: number,

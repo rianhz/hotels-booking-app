@@ -16,6 +16,8 @@ type PropsTypes = {
 	handleReset: () => void;
 	radios: string;
 	listRef: React.MutableRefObject<undefined>;
+	setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+	searchValue: string;
 };
 
 const List: React.FC<PropsTypes> = ({
@@ -29,6 +31,8 @@ const List: React.FC<PropsTypes> = ({
 	handleReset,
 	radios,
 	listRef,
+	setSearchValue,
+	searchValue,
 }) => {
 	return (
 		<>
@@ -40,6 +44,8 @@ const List: React.FC<PropsTypes> = ({
 			<Row>
 				<Col lg={3} className="p-0 m-0">
 					<SideBar
+						searchValue={searchValue}
+						setSearchValue={setSearchValue}
 						handleMode={handleMode}
 						handleRadios={handleRadios}
 						handleStars={handleStars}
